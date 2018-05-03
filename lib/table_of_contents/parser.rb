@@ -43,7 +43,7 @@ module Jekyll
         # TODO: Use kramdown auto ids
         @doc.css(toc_headings).each do |node|
           text = node.text
-          id = text.downcase
+          id = node['id']
           id.gsub!(PUNCTUATION_REGEXP, '') # remove punctuation
           id.gsub!(' ', '-') # replace spaces with dash
 
